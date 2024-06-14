@@ -48,10 +48,11 @@ export default {
     background: none;
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
 .outlined {
-    border: 2px solid;
+    border: 1px solid;
 }
 
 button img{
@@ -69,7 +70,7 @@ button.only-icon .label{
     display: none;
 }
 
-/* Theme 1 */
+/* THEME 1 */
 
 /* For primary button  */
 .theme1.primary {
@@ -96,5 +97,19 @@ button.only-icon .label{
 .theme1.secondary:hover {
     background-color: #00b25c;
     color: #000;
+}
+
+/* For outlined button  */
+.theme1.outlined {
+    color: #000;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+.theme1.outlined:hover {
+    color: #fff;
+    background-color: #000;
+}
+.theme1.outlined:hover img {
+    filter: invert(1);
 }
 </style>

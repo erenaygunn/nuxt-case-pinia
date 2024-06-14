@@ -3,19 +3,21 @@
   <div class="main">
     <div class="container">
       <MainButton theme="theme1" class="primary" label="Primary Button"/>
-      <MainButton theme="theme1" class="primary" label="Primary Button" icon=""/>
-      <MainButton theme="theme1" class="primary" label="Primary Button" :disabled="true"/>
-      <MainButton theme="theme1" class="primary" label="Primary Button" :loading="true"/>
+      <MainButton theme="theme1" class="primary" label="Primary Button" icon="only-icon"/>
+      <MainButton theme="theme1" class="primary" label="Primary Button" icon="left"/>
+      <MainButton theme="theme1" class="primary" label="Primary Button" icon="right"/>
     </div>
     <div class="container">
       <MainButton theme="theme1" class="secondary" label="Secondary Button"/>
-      <MainButton theme="theme1" class="secondary" label="Secondary Button" :disabled="true"/>
-      <MainButton theme="theme1" class="secondary" label="Secondary Button" :loading="true"/>
+      <MainButton theme="theme1" class="secondary" label="Secondary Button" icon="only-icon"/>
+      <MainButton theme="theme1" class="secondary" label="Secondary Button" icon="left"/>
+      <MainButton theme="theme1" class="secondary" label="Secondary Button" icon="right"/>
     </div>
     <div class="container">
       <MainButton theme="theme1" class="outlined" label="Outlined Button"/>
-      <MainButton theme="theme1" class="outlined" label="Outlined Button" :disabled="true"/>
-      <MainButton theme="theme1" class="outlined" label="Outlined Button" :loading="true"/>
+      <MainButton theme="theme1" class="outlined" label="Outlined Button" icon="only-icon"/>
+      <MainButton theme="theme1" class="outlined" label="Outlined Button" icon="left"/>
+      <MainButton theme="theme1" class="outlined" label="Outlined Button" icon="right"/>
     </div>
   </div>
 </template>
@@ -26,7 +28,7 @@
 <style>
 .main {
   display: flex;
-  align-items: start;
+  align-items: center;
   flex-direction: row;
   margin-top: 20px;
   gap: 30px;
