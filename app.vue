@@ -2,49 +2,46 @@
   <h2>Theme 1</h2>
   <div class="main">
     <div class="container">
-      <MainButton theme="theme1" class="primary" label="Primary Button"/>
-      <MainButton theme="theme1" class="primary" label="Primary Button" icon="only-icon"/>
-      <MainButton theme="theme1" class="primary" label="Primary Button" icon="left"/>
-      <MainButton theme="theme1" class="primary" label="Primary Button" icon="right"/>
+      <PrimaryButton theme="theme1">Primary Button</PrimaryButton>
+      <PrimaryButton theme="theme1" icon="only-icon">Primary Button</PrimaryButton>
+      <PrimaryButton theme="theme1" icon="left">Primary Button</PrimaryButton>
+      <PrimaryButton theme="theme1" icon="right">Primary Button</PrimaryButton>
     </div>
     <div class="container">
-      <MainButton theme="theme1" class="secondary" label="Secondary Button"/>
-      <MainButton theme="theme1" class="secondary" label="Secondary Button" icon="only-icon"/>
-      <MainButton theme="theme1" class="secondary" label="Secondary Button" icon="left"/>
-      <MainButton theme="theme1" class="secondary" label="Secondary Button" icon="right"/>
+      <SecondaryButton theme="theme1">Secondary Button</SecondaryButton>
+      <SecondaryButton theme="theme1" icon="only-icon">Secondary Button</SecondaryButton>
+      <SecondaryButton theme="theme1" icon="left">Secondary Button</SecondaryButton>
+      <SecondaryButton theme="theme1" icon="right">Secondary Button</SecondaryButton>
     </div>
     <div class="container">
-      <MainButton theme="theme1" class="outlined" label="Outlined Button"/>
-      <MainButton theme="theme1" class="outlined" label="Outlined Button" icon="only-icon"/>
-      <MainButton theme="theme1" class="outlined" label="Outlined Button" icon="left"/>
-      <MainButton theme="theme1" class="outlined" label="Outlined Button" icon="right"/>
+      <OutlinedButton theme="theme1">Outlined Button</OutlinedButton>
+      <OutlinedButton theme="theme1" icon="only-icon">Outlined Button</OutlinedButton>
+      <OutlinedButton theme="theme1" icon="left">Outlined Button</OutlinedButton>
+      <OutlinedButton theme="theme1" icon="right">Outlined Button</OutlinedButton>
     </div>
   </div>
   <h2>Theme 2</h2>
   <div class="main">
     <div class="container">
-      <MainButton theme="theme2" class="primary" label="Primary Button"/>
-      <MainButton theme="theme2" class="primary" label="Primary Button" icon="only-icon"/>
-      <MainButton theme="theme2" class="primary" label="Primary Button" icon="left"/>
-      <MainButton theme="theme2" class="primary" label="Primary Button" icon="right"/>
+      <PrimaryButton theme="theme2">Primary Button</PrimaryButton>
+      <PrimaryButton theme="theme2" icon="only-icon">Primary Button</PrimaryButton>
+      <PrimaryButton theme="theme2" icon="left">Primary Button</PrimaryButton>
+      <PrimaryButton theme="theme2" icon="right">Primary Button</PrimaryButton>
     </div>
     <div class="container">
-      <MainButton theme="theme2" class="secondary" label="Secondary Button"/>
-      <MainButton theme="theme2" class="secondary" label="Secondary Button" icon="only-icon"/>
-      <MainButton theme="theme2" class="secondary" label="Secondary Button" icon="left"/>
-      <MainButton theme="theme2" class="secondary" label="Secondary Button" icon="right"/>
+      <SecondaryButton theme="theme2">Secondary Button</SecondaryButton>
+      <SecondaryButton theme="theme2" icon="only-icon">Secondary Button</SecondaryButton>
+      <SecondaryButton theme="theme2" icon="left">Secondary Button</SecondaryButton>
+      <SecondaryButton theme="theme2" icon="right">Secondary Button</SecondaryButton>
     </div>
     <div class="container">
-      <MainButton theme="theme2" class="outlined" label="Outlined Button"/>
-      <MainButton theme="theme2" class="outlined" label="Outlined Button" icon="only-icon"/>
-      <MainButton theme="theme2" class="outlined" label="Outlined Button" icon="left"/>
-      <MainButton theme="theme2" class="outlined" label="Outlined Button" icon="right"/>
+      <OutlinedButton theme="theme2">Outlined Button</OutlinedButton>
+      <OutlinedButton theme="theme2" icon="only-icon">Outlined Button</OutlinedButton>
+      <OutlinedButton theme="theme2" icon="left">Outlined Button</OutlinedButton>
+      <OutlinedButton theme="theme2" icon="right">Outlined Button</OutlinedButton>
     </div>
   </div>
 </template>
-
-<script>
-</script>
 
 <style>
 .main {
