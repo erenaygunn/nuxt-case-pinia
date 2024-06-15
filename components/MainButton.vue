@@ -81,7 +81,8 @@ button.only-icon .label{
 }
 .theme1.primary:hover {
     background-color: #505050;
-    color: #fff;
+    color: #01c268;
+    transform: translateX(5px);
 }
 .theme1.primary img {
     filter: invert(1);
@@ -96,7 +97,12 @@ button.only-icon .label{
 }
 .theme1.secondary:hover {
     background-color: #00b25c;
-    color: #000;
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.theme1.secondary:hover img {
+    filter: invert(1);
 }
 
 /* For outlined button  */
@@ -108,8 +114,67 @@ button.only-icon .label{
 .theme1.outlined:hover {
     color: #fff;
     background-color: #000;
+    transform: translateX(5px);
 }
 .theme1.outlined:hover img {
     filter: invert(1);
+}
+
+/* THEME 2 */
+
+/* For primary button  */
+.theme2.primary {
+  background-color: #6d6e00;
+  color: #f9ffa6;
+  transition: all 0.2s;
+  padding: 16px 20px
+}
+.theme2.primary:hover {
+    background-color: #8a8b00;
+    color: #f9ffa6;
+    transform: scale(1.05);
+}
+
+/* For secondary button  */
+.theme2.secondary {
+    position: relative;
+    background-color: transparent;
+    color: #000;
+    transition: all 0.2s;
+    padding: 16px 20px;
+    border: 1px solid transparent;
+}
+.theme2.secondary::after {
+    background: #000;
+    content: '';
+    position: absolute;
+    width: 75%;
+    height: 1px;
+    text-align: center;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.2s;
+}
+.theme2.secondary:hover{
+    transform: translateY(-2px);
+}
+.theme2.secondary:hover::after{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+
+/* For outlined button  */
+.theme2.outlined {
+    color: #000;
+    transition: all 0.4s;
+    border: #6d6e00 1px solid;
+}
+.theme2.outlined:hover {
+    border-radius: 40px;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
 }
 </style>
