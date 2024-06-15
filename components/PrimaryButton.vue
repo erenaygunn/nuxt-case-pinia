@@ -1,7 +1,11 @@
 <template>
     <button :class="[theme, icon, 'primary', {loading: buttonStore.loading, disabled: buttonStore.disabled}]">
-        <img v-if="icon && !buttonStore.disabled" src="@/assets/right.png" alt="icon" :class="icon">
-        <span v-if="buttonStore.loading">Loading...</span>
+        <img v-if="icon" src="@/assets/right.png" alt="icon" :class="icon">
+        <div v-if="buttonStore.loading" class="loader">
+            <div class="scanner">
+                <span>Loading...</span>
+            </div>
+        </div>
         <span v-else class="label"><slot></slot></span>
     </button>
 </template>
@@ -73,6 +77,11 @@ button.only-icon .label {
     filter: invert(1);
 }
 
+.theme1.primary .scanner span::before {
+    border-right: 4px solid #fff;
+    color: #fff;
+}
+
 /* THEME 2 */
 
 .theme2.primary {
@@ -85,5 +94,53 @@ button.only-icon .label {
     background-color: #8a8b00;
     color: #f9ffa6;
     transform: scale(1.05);
+}
+
+.theme2.primary .scanner span::before {
+    border-right: 4px solid #f9ffa6;
+    color: #f9ffa6;
+}
+
+/* LOADING ANIMATION */
+
+button.loading {
+    cursor: wait;
+}
+
+.scanner span {
+  color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.scanner span::before {
+  content: "Loading...";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-right: 4px solid;
+  overflow: hidden;
+  animation: load91371 2s linear infinite;
+}
+
+@keyframes load91371 {
+  0%, 10%, 100% {
+    width: 0;
+  }
+
+  10%,20%,30%,40%,50%,60%,70%,80%,90%,100% {
+    border-right-color: transparent;
+  }
+
+  11%,21%,31%,41%,51%,61%,71%,81%,91% {
+    border-right-color: inherit;
+  }
+
+  60%, 80% {
+    width: 100%;
+  }
+  
 }
 </style>
