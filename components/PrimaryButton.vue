@@ -55,7 +55,7 @@ button img {
 button.left {
     flex-direction: row;
 }
-.right {
+button.right {
     flex-direction: row-reverse;
 }
 button.only-icon .label {
