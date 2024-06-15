@@ -1,22 +1,16 @@
 <template>
-    <button class="primary" :class="[theme, icon, {'loading': loading,'disabled': disabled}]" @click="handleClick">
-        <img v-if="icon && !disabled" src="@/assets/right.png" alt="icon" :class="icon">
-        <span v-if="loading">Loading...</span>
+    <button :class="[theme, icon, 'primary', {loading: buttonStore.loading, disabled: buttonStore.disabled}]">
+        <img v-if="icon && !buttonStore.disabled" src="@/assets/right.png" alt="icon" :class="icon">
+        <span v-if="buttonStore.loading">Loading...</span>
         <span v-else class="label"><slot></slot></span>
     </button>
 </template>
 
 <script>
+import { useButtonStore } from '@/buttonStore';
+
 export default {
     props: {
-        loading: {
-            type: Boolean,
-            default: false
-        },
-        disabled: {
-            type: Boolean,
-            default: false
-        },
         icon: {
             type: String,
             default: ''
@@ -26,13 +20,13 @@ export default {
             default: ''
         }
     },
-    methods: {
-        handleClick() {
-            if (!this.loading && !this.disabled) {
-                // Handle button click logic here
-            }
-        }
-    }
+    setup() {
+        const buttonStore = useButtonStore();
+
+        return {
+            buttonStore
+        };
+    },
 }
 </script>
 

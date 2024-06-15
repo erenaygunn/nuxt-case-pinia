@@ -1,4 +1,6 @@
 <template>
+  
+
   <h2>Theme 1</h2>
   <div class="main">
     <div class="container">
@@ -19,7 +21,9 @@
       <OutlinedButton theme="theme1" icon="left">Outlined Button</OutlinedButton>
       <OutlinedButton theme="theme1" icon="right">Outlined Button</OutlinedButton>
     </div>
+    <StateUpdater />
   </div>
+
   <h2>Theme 2</h2>
   <div class="main">
     <div class="container">
@@ -43,7 +47,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .main {
   display: flex;
   align-items: center;
@@ -57,5 +61,11 @@
   flex-direction: column;
   gap: 20px;
 }
+
+.theme1.loading {
+  
+}
+
+
 
 </style>
