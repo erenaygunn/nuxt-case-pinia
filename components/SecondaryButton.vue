@@ -1,6 +1,6 @@
 <template>
     <button :class="[theme, icon, 'secondary', {loading: buttonStore.loading, disabled: buttonStore.disabled}]">
-        <img v-if="icon" src="@/assets/right.png" alt="icon" :class="icon">
+        <img v-if="icon && !buttonStore.loading" src="@/assets/right.png" alt="icon" :class="icon">
         <div v-if="buttonStore.loading" class="loader">
             <div class="spinner">
                 <span>L</span>

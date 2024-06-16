@@ -1,6 +1,6 @@
 <template>
     <button :class="[theme, icon, 'outlined', {loading: buttonStore.loading, disabled: buttonStore.disabled}]">
-        <img v-if="icon" src="@/assets/right.png" alt="icon" :class="icon">
+        <img v-if="icon && !buttonStore.loading" src="@/assets/right.png" alt="icon" :class="icon">
         <div v-if="buttonStore.loading" class="progress-loader">
             <div class="progress"></div>
         </div>
