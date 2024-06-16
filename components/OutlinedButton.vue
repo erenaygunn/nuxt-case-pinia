@@ -65,6 +65,7 @@ button.only-icon .label {
     color: #000;
     border-radius: 10px;
     transition: all 0.2s;
+    border: 1px solid #000;
 }
 .theme1.outlined:hover {
     color: #fff;
@@ -77,6 +78,21 @@ button.only-icon .label {
 
 .theme1 .progress {
     background: #00924e;
+}
+
+.theme1.outlined.disabled {
+    border-color: #636363d0;
+    color: #636363d0;
+    cursor: not-allowed;
+}
+
+.theme1.outlined.disabled:hover, .theme1.outlined.loading:hover {
+    transform: none;
+    background-color: transparent;
+}
+
+.theme1.outlined.disabled:hover img {
+    filter: none;
 }
 
 /* THEME 2 */
@@ -96,7 +112,24 @@ button.only-icon .label {
     background: #6d6e00;
 }
 
+.theme2.outlined.disabled {
+    color: #636363d0;
+    cursor: not-allowed;
+    opacity: 0.8;
+    border-color: #636363d0;
+}
+
+.theme2.outlined.disabled:hover, .theme2.outlined.loading:hover {
+    transform: none;
+    box-shadow: none;
+    border-radius: unset;
+}
+
 /* LOADING ANIMATION*/
+
+button.loading {
+    cursor:wait;
+}
 
 .progress-loader {
   position: relative;

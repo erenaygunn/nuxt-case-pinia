@@ -82,6 +82,20 @@ button.only-icon .label {
     color: #fff;
 }
 
+.theme1.primary.disabled {
+    background-color: #505050;
+    color: #fff;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+.theme1.primary.disabled:hover, .theme1.primary.loading:hover {
+    transform: none;
+}
+
+.theme1.primary.loading:hover {
+    background-color: #000;
+}
+
 /* THEME 2 */
 
 .theme2.primary {
@@ -103,6 +117,21 @@ button.only-icon .label {
 .theme2.primary .scanner span::before {
     border-right: 4px solid #f9ffa6;
     color: #f9ffa6;
+}
+
+.theme2.primary.disabled {
+    background-color: #8a8b00;
+    color: #f9ffa6;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.theme2.primary.disabled:hover, .theme2.primary.loading:hover {
+    transform: none;
+}
+
+.theme2.primary.loading:hover {
+    background-color: #6d6e00;
 }
 
 /* LOADING ANIMATION */

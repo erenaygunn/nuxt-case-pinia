@@ -83,6 +83,24 @@ button.only-icon .label {
     filter: invert(1);
 }
 
+.theme1.secondary.disabled {
+    background-color: #00ac59b2;
+    color: #000;
+    cursor: not-allowed;
+}
+
+.theme1.secondary.disabled:hover, .theme1.secondary.loading:hover {
+    transform: none;   
+}
+
+.theme1.secondary.disabled:hover img {
+    filter: none;
+}
+
+.theme1.secondary.loading:hover {
+    background-color: #00924e;
+    color: #000;
+}
 /* THEME 2 */
 
 .theme2.secondary {
@@ -114,6 +132,26 @@ button.only-icon .label {
     height: 5px;
     border-radius: 50%;
 }
+
+.theme2.secondary.disabled {
+    color: #636363d0;
+    cursor: not-allowed;
+}
+
+.theme2.secondary.disabled::after {
+    background: #636363d0;
+}
+
+.theme2.secondary.disabled:hover, .theme2.secondary.loading:hover {
+    transform: none;
+}
+
+.theme2.secondary.loading:hover::after, .theme2.secondary.disabled::after {
+    width: 75%;
+    height: 1px;
+    border-radius: 0;
+} 
+
 
 /* LOADING ANIMATION*/
 button.loading {
