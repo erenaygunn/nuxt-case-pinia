@@ -1,7 +1,7 @@
 <template>
-    <button :class="[theme, icon, 'outlined', {loading: buttonStore.loading, disabled: buttonStore.disabled}]">
-        <img v-if="icon && !buttonStore.loading" src="@/assets/right.png" alt="icon" :class="icon">
-        <div v-if="buttonStore.loading" class="progress-loader">
+    <button :class="[theme, icon, 'outlined', {loading: buttonStore.buttons['Outlined']?.loading, disabled: buttonStore.buttons['Outlined']?.disabled}]" @click="handleClick">
+        <img v-if="icon && !buttonStore.buttons['Outlined']?.loading" src="@/assets/right.png" alt="icon" :class="icon">
+        <div v-if="buttonStore.buttons['Outlined']?.loading" class="progress-loader">
             <div class="progress"></div>
         </div>
         <span v-else class="label"><slot></slot></span>
@@ -25,8 +25,13 @@ export default {
     setup() {
         const buttonStore = useButtonStore();
 
+        const handleClick = () => {
+            buttonStore.handleClick('Outlined');
+        };
+
         return {
-            buttonStore
+            buttonStore,
+            handleClick
         };
     },
 }

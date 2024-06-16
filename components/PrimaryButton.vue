@@ -1,7 +1,7 @@
 <template>
-    <button :class="[theme, icon, 'primary', {loading: buttonStore.loading, disabled: buttonStore.disabled}]">
-        <img v-if="icon && !buttonStore.loading" src="@/assets/right.png" alt="icon" :class="icon">
-        <div v-if="buttonStore.loading" class="loader">
+    <button :class="[theme, icon, 'primary', {loading: buttonStore.buttons['Primary']?.loading, disabled: buttonStore.buttons['Primary']?.disabled}]" @click="handleClick">
+        <img v-if="icon && !buttonStore.buttons['Primary']?.loading" src="@/assets/right.png" alt="icon" :class="icon">
+        <div v-if="buttonStore.buttons['Primary']?.loading" class="loader">
             <div class="scanner">
                 <span>Loading...</span>
             </div>
@@ -27,8 +27,13 @@ export default {
     setup() {
         const buttonStore = useButtonStore();
 
+        const handleClick = () => {
+            buttonStore.handleClick('Primary');
+        };
+
         return {
-            buttonStore
+            buttonStore,
+            handleClick
         };
     },
 }
