@@ -1,22 +1,18 @@
 <template>
-    <button class="outlined" :class="[theme, icon, {'loading': loading,'disabled': disabled}]" @click="handleClick">
-        <img v-if="icon && !disabled" src="@/assets/right.png" alt="icon" :class="icon">
-        <span v-if="loading">Loading...</span>
+    <button :class="[theme, icon, 'outlined', {loading: buttonStore.loading, disabled: buttonStore.disabled}]">
+        <img v-if="icon" src="@/assets/right.png" alt="icon" :class="icon">
+        <div v-if="buttonStore.loading" class="progress-loader">
+            <div class="progress"></div>
+        </div>
         <span v-else class="label"><slot></slot></span>
     </button>
 </template>
 
 <script>
+import { useButtonStore } from '@/buttonStore';
+
 export default {
     props: {
-        loading: {
-            type: Boolean,
-            default: false
-        },
-        disabled: {
-            type: Boolean,
-            default: false
-        },
         icon: {
             type: String,
             default: ''
@@ -26,13 +22,13 @@ export default {
             default: ''
         }
     },
-    methods: {
-        handleClick() {
-            if (!this.loading && !this.disabled) {
-                // Handle button click logic here
-            }
-        }
-    }
+    setup() {
+        const buttonStore = useButtonStore();
+
+        return {
+            buttonStore
+        };
+    },
 }
 </script>
 
@@ -79,6 +75,10 @@ button.only-icon .label {
     filter: invert(1);
 }
 
+.theme1 .progress {
+    background: #000;
+}
+
 /* THEME 2 */
 
 .theme2.outlined {
@@ -90,5 +90,45 @@ button.only-icon .label {
     border-radius: 40px;
     transform: translateY(-2px);
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.theme2 .progress {
+    background: #6d6e00;
+}
+
+/* LOADING ANIMATION*/
+
+.progress-loader {
+  position: relative;
+  width: 50px;
+  background: #00000041;
+  height: 10px;
+  border-radius: 7px;
+  margin: auto;
+  text-align: center;
+
+}
+
+.progress {
+  width: 1px;
+  height: 10px;
+  border-radius: 7px;
+  background: #ffffff;
+  transition: 0.5s;
+  animation: loading_44 5s cubic-bezier(.4,1.01,1,1) infinite;
+}
+
+@keyframes loading_44 {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
 }
 </style>

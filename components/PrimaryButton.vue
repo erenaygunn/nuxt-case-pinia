@@ -88,12 +88,16 @@ button.only-icon .label {
     background-color: #6d6e00;
     color: #f9ffa6;
     transition: all 0.2s;
-    padding: 16px 20px;
+    padding: 16px 30px;
 }
 .theme2.primary:hover {
     background-color: #8a8b00;
     color: #f9ffa6;
     transform: scale(1.05);
+}
+
+.theme2.primary img {
+    filter: invert(1);
 }
 
 .theme2.primary .scanner span::before {

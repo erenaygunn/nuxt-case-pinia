@@ -1,22 +1,26 @@
 <template>
-    <button class="secondary" :class="[theme, icon, {'loading': loading,'disabled': disabled}]" @click="handleClick">
-        <img v-if="icon && !disabled" src="@/assets/right.png" alt="icon" :class="icon">
-        <span v-if="loading">Loading...</span>
+    <button :class="[theme, icon, 'secondary', {loading: buttonStore.loading, disabled: buttonStore.disabled}]">
+        <img v-if="icon" src="@/assets/right.png" alt="icon" :class="icon">
+        <div v-if="buttonStore.loading" class="loader">
+            <div class="spinner">
+                <span>L</span>
+                <span>o</span>
+                <span>a</span>
+                <span>d</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
+            </div>
+        </div>
         <span v-else class="label"><slot></slot></span>
     </button>
 </template>
 
 <script>
+import { useButtonStore } from '@/buttonStore';
+
 export default {
     props: {
-        loading: {
-            type: Boolean,
-            default: false
-        },
-        disabled: {
-            type: Boolean,
-            default: false
-        },
         icon: {
             type: String,
             default: ''
@@ -26,13 +30,13 @@ export default {
             default: ''
         }
     },
-    methods: {
-        handleClick() {
-            if (!this.loading && !this.disabled) {
-                // Handle button click logic here
-            }
-        }
-    }
+    setup() {
+        const buttonStore = useButtonStore();
+
+        return {
+            buttonStore
+        };
+    },
 }
 </script>
 
@@ -109,5 +113,57 @@ button.only-icon .label {
     width: 5px;
     height: 5px;
     border-radius: 50%;
+}
+
+/* LOADING ANIMATION*/
+button.loading {
+    cursor: wait;
+}
+
+.spinner {
+ width: max-content;
+ letter-spacing: 2px;
+ filter: drop-shadow(0 0 10px);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.spinner span {
+ animation: loading6454 1.75s ease infinite;
+}
+
+.spinner span:nth-child(2) {
+ animation-delay: 0.1s;
+}
+
+.spinner span:nth-child(3) {
+ animation-delay: 0.2s;
+}
+
+.spinner span:nth-child(4) {
+ animation-delay: 0.3s;
+}
+
+.spinner span:nth-child(5) {
+ animation-delay: .4s;
+}
+
+.spinner span:nth-child(6) {
+ animation-delay: .5s;
+}
+
+.spinner span:nth-child(7) {
+ animation-delay: .6s;
+}
+
+@keyframes loading6454 {
+ 0%, 100% {
+  transform: translateY(0);
+ }
+
+ 50% {
+  transform: translateY(-5px);
+ }
 }
 </style>
