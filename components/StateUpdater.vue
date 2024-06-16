@@ -2,6 +2,14 @@
     <div>
         <h3>Update Button States</h3>
         <label>
+            Button Type:
+            <select v-model="selectedButtonType">
+                <option value="Primary">Primary</option>
+                <option value="Secondary">Secondary</option>
+                <option value="Outlined">Outlined</option>
+            </select>
+        </label>
+        <label>
             Loading:
             <input type="checkbox" @change="updateLoading" />
         </label>
@@ -14,26 +22,26 @@
 
 <script>
 import { useButtonStore } from '@/buttonStore';
+import { ref } from 'vue';
 
 export default {
     setup() {
         const buttonStore = useButtonStore();
+        const selectedButtonType = ref('Primary');
 
-        const updateLoading = (value) => {
-            buttonStore.setLoading(event.target.checked);
+        const updateLoading = (event) => {
+            buttonStore.setLoading(selectedButtonType.value, event.target.checked);
         };
-        const updateDisabled = (value) => {
-            buttonStore.setDisabled(event.target.checked);
+
+        const updateDisabled = (event) => {
+            buttonStore.setDisabled(selectedButtonType.value, event.target.checked);
         };
-        
+
         return {
-            updateDisabled,
-            updateLoading
-        }
+            selectedButtonType,
+            updateLoading,
+            updateDisabled
+        };
     }
 }
 </script>
-
-<style scoped>
-/* Add any required styles here */
-</style>
