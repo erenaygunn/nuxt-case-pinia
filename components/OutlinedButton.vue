@@ -76,7 +76,7 @@ button.only-icon .label {
 }
 
 .theme1 .progress {
-    background: #000;
+    background: #00924e;
 }
 
 /* THEME 2 */

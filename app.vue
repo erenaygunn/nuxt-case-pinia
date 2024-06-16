@@ -61,11 +61,4 @@
   flex-direction: column;
   gap: 20px;
 }
-
-.theme1.loading {
-  
-}
-
-
-
 </style>
