@@ -21,8 +21,7 @@
 </template>
 
 <script>
-import { useButtonStore } from '@/buttonStore';
-import { ref } from 'vue';
+import { useButtonStore } from '@/store/buttonStore';
 
 export default {
     setup() {
@@ -45,3 +44,4 @@ export default {
     }
 }
 </script>
+~/store/buttonStore
