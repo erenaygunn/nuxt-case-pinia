@@ -1,5 +1,5 @@
 <template>
-    <button :class="[theme, icon, 'secondary', {loading: buttonStore.buttons['Secondary']?.loading, disabled: buttonStore.buttons['Secondary']?.disabled}]" @click="handleClick">
+    <button :class="[icon, 'secondary', {loading: buttonStore.buttons['Secondary']?.loading, disabled: buttonStore.buttons['Secondary']?.disabled}]" @click="handleClick">
         <img v-if="icon && !buttonStore.buttons['Secondary']?.loading" src="@/assets/right.png" alt="icon" :class="icon">
         <div v-if="buttonStore.buttons['Secondary']?.loading" class="loader">
             <div class="spinner">
@@ -17,15 +17,11 @@
 </template>
 
 <script>
-import { useButtonStore } from '@/buttonStore';
+import { useButtonStore } from '@/store/buttonStore';
 
 export default {
     props: {
         icon: {
-            type: String,
-            default: ''
-        },
-        theme: {
             type: String,
             default: ''
         }
@@ -70,93 +66,6 @@ button.right {
 button.only-icon .label {
     display: none;
 }
-
-/* THEME 1 */
-
-.theme1.secondary {
-    background-color: #00924e;
-    color: #000;
-    border-radius: 10px;
-    transition: all 0.2s;
-}
-.theme1.secondary:hover {
-    background-color: #00b25c;
-    color: #fff;
-    transform: translateX(5px);
-}
-.theme1.secondary:hover img {
-    filter: invert(1);
-}
-
-.theme1.secondary.disabled {
-    background-color: #00ac59b2;
-    color: #000;
-    cursor: not-allowed;
-}
-
-.theme1.secondary.disabled:hover, .theme1.secondary.loading:hover {
-    transform: none;   
-}
-
-.theme1.secondary.disabled:hover img {
-    filter: none;
-}
-
-.theme1.secondary.loading:hover {
-    background-color: #00924e;
-    color: #000;
-}
-/* THEME 2 */
-
-.theme2.secondary {
-    position: relative;
-    background-color: transparent;
-    color: #000;
-    transition: all 0.2s;
-    padding: 16px 20px;
-    border: 1px solid transparent;
-}
-.theme2.secondary::after {
-    background: #000;
-    content: '';
-    position: absolute;
-    width: 75%;
-    height: 1px;
-    text-align: center;
-    margin: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: all 0.2s;
-}
-.theme2.secondary:hover {
-    transform: translateY(-2px);
-}
-.theme2.secondary:hover::after {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-}
-
-.theme2.secondary.disabled {
-    color: #636363d0;
-    cursor: not-allowed;
-}
-
-.theme2.secondary.disabled::after {
-    background: #636363d0;
-}
-
-.theme2.secondary.disabled:hover, .theme2.secondary.loading:hover {
-    transform: none;
-}
-
-.theme2.secondary.loading:hover::after, .theme2.secondary.disabled::after {
-    width: 75%;
-    height: 1px;
-    border-radius: 0;
-} 
-
 
 /* LOADING ANIMATION*/
 button.loading {
@@ -210,3 +119,4 @@ button.loading {
  }
 }
 </style>
+~/store/buttonStore

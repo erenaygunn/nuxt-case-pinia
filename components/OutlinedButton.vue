@@ -1,5 +1,5 @@
 <template>
-    <button :class="[theme, icon, 'outlined', {loading: buttonStore.buttons['Outlined']?.loading, disabled: buttonStore.buttons['Outlined']?.disabled}]" @click="handleClick">
+    <button :class="[icon, 'outlined', {loading: buttonStore.buttons['Outlined']?.loading, disabled: buttonStore.buttons['Outlined']?.disabled}]" @click="handleClick">
         <img v-if="icon && !buttonStore.buttons['Outlined']?.loading" src="@/assets/right.png" alt="icon" :class="icon">
         <div v-if="buttonStore.buttons['Outlined']?.loading" class="progress-loader">
             <div class="progress"></div>
@@ -9,15 +9,11 @@
 </template>
 
 <script>
-import { useButtonStore } from '@/buttonStore';
+import { useButtonStore } from '@/store/buttonStore';
 
 export default {
     props: {
         icon: {
-            type: String,
-            default: ''
-        },
-        theme: {
             type: String,
             default: ''
         }
@@ -64,72 +60,6 @@ button.only-icon .label {
     display: none;
 }
 
-/* THEME 1 */
-
-.theme1.outlined {
-    color: #000;
-    border-radius: 10px;
-    transition: all 0.2s;
-    border: 1px solid #000;
-}
-.theme1.outlined:hover {
-    color: #fff;
-    background-color: #000;
-    transform: translateX(5px);
-}
-.theme1.outlined:hover img {
-    filter: invert(1);
-}
-
-.theme1 .progress {
-    background: #00924e;
-}
-
-.theme1.outlined.disabled {
-    border-color: #636363d0;
-    color: #636363d0;
-    cursor: not-allowed;
-}
-
-.theme1.outlined.disabled:hover, .theme1.outlined.loading:hover {
-    transform: none;
-    background-color: transparent;
-}
-
-.theme1.outlined.disabled:hover img {
-    filter: none;
-}
-
-/* THEME 2 */
-
-.theme2.outlined {
-    color: #000;
-    transition: all 0.4s;
-    border: #6d6e00 1px solid;
-}
-.theme2.outlined:hover {
-    border-radius: 40px;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
-}
-
-.theme2 .progress {
-    background: #6d6e00;
-}
-
-.theme2.outlined.disabled {
-    color: #636363d0;
-    cursor: not-allowed;
-    opacity: 0.8;
-    border-color: #636363d0;
-}
-
-.theme2.outlined.disabled:hover, .theme2.outlined.loading:hover {
-    transform: none;
-    box-shadow: none;
-    border-radius: unset;
-}
-
 /* LOADING ANIMATION*/
 
 button.loading {
@@ -170,3 +100,4 @@ button.loading {
   }
 }
 </style>
+~/store/buttonStore

@@ -1,5 +1,5 @@
 <template>
-    <button :class="[theme, icon, 'primary', {loading: buttonStore.buttons['Primary']?.loading, disabled: buttonStore.buttons['Primary']?.disabled}]" @click="handleClick">
+    <button :class="[icon, 'primary', {loading: buttonStore.buttons['Primary']?.loading, disabled: buttonStore.buttons['Primary']?.disabled}]" @click="handleClick">
         <img v-if="icon && !buttonStore.buttons['Primary']?.loading" src="@/assets/right.png" alt="icon" :class="icon">
         <div v-if="buttonStore.buttons['Primary']?.loading" class="loader">
             <div class="scanner">
@@ -11,15 +11,11 @@
 </template>
 
 <script>
-import { useButtonStore } from '@/buttonStore';
+import { useButtonStore } from '@/store/buttonStore';
 
 export default {
     props: {
         icon: {
-            type: String,
-            default: ''
-        },
-        theme: {
             type: String,
             default: ''
         }
@@ -39,7 +35,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .primary {
     border: none;
     padding: 14px 17px;
@@ -63,80 +59,6 @@ button.right {
 }
 button.only-icon .label {
     display: none;
-}
-
-/* THEME 1 */
-
-.theme1.primary {
-    background-color: #000;
-    color: #fff;
-    border-radius: 10px;
-    transition: all 0.2s;
-}
-.theme1.primary:hover {
-    background-color: #505050;
-    color: #01c268;
-    transform: translateX(5px);
-}
-.theme1.primary img {
-    filter: invert(1);
-}
-
-.theme1.primary .scanner span::before {
-    border-right: 4px solid #fff;
-    color: #fff;
-}
-
-.theme1.primary.disabled {
-    background-color: #505050;
-    color: #fff;
-    cursor: not-allowed;
-    opacity: 0.8;
-}
-.theme1.primary.disabled:hover, .theme1.primary.loading:hover {
-    transform: none;
-}
-
-.theme1.primary.loading:hover {
-    background-color: #000;
-}
-
-/* THEME 2 */
-
-.theme2.primary {
-    background-color: #6d6e00;
-    color: #f9ffa6;
-    transition: all 0.2s;
-    padding: 16px 30px;
-}
-.theme2.primary:hover {
-    background-color: #8a8b00;
-    color: #f9ffa6;
-    transform: scale(1.05);
-}
-
-.theme2.primary img {
-    filter: invert(1);
-}
-
-.theme2.primary .scanner span::before {
-    border-right: 4px solid #f9ffa6;
-    color: #f9ffa6;
-}
-
-.theme2.primary.disabled {
-    background-color: #8a8b00;
-    color: #f9ffa6;
-    cursor: not-allowed;
-    opacity: 0.8;
-}
-
-.theme2.primary.disabled:hover, .theme2.primary.loading:hover {
-    transform: none;
-}
-
-.theme2.primary.loading:hover {
-    background-color: #6d6e00;
 }
 
 /* LOADING ANIMATION */
@@ -182,3 +104,4 @@ button.loading {
   
 }
 </style>
+~/store/buttonStore
