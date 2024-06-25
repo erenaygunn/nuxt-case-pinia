@@ -1,0 +1,65 @@
+{
+    "buttons": [
+      {
+        "type": "PrimaryButton",
+        "label": "Primary Button",
+        "icon": null
+      },
+      {
+        "type": "PrimaryButton",
+        "label": "Primary Button",
+        "icon": "only-icon"
+      },
+      {
+        "type": "PrimaryButton",
+        "label": "Primary Button",
+        "icon": "left"
+      },
+      {
+        "type": "PrimaryButton",
+        "label": "Primary Button",
+        "icon": "right"
+      },
+      {
+        "type": "SecondaryButton",
+        "label": "Secondary Button",
+        "icon": null
+      },
+      {
+        "type": "SecondaryButton",
+        "label": "Secondary Button",
+        "icon": "only-icon"
+      },
+      {
+        "type": "SecondaryButton",
+        "label": "Secondary Button",
+        "icon": "left"
+      },
+      {
+        "type": "SecondaryButton",
+        "label": "Secondary Button",
+        "icon": "right"
+      },
+      {
+        "type": "OutlinedButton",
+        "label": "Outlined Button",
+        "icon": null
+      },
+      {
+        "type": "OutlinedButton",
+        "label": "Outlined Button",
+        "icon": "only-icon"
+      },
+      {
+        "type": "OutlinedButton",
+        "label": "Outlined Button",
+        "icon": "left"
+      },
+      {
+        "type": "OutlinedButton",
+        "label": "Outlined Button",
+        "icon": "right"
+      }
+    ]
+  }
+  
