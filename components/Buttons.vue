@@ -43,12 +43,6 @@ data.forEach((button) => {
 });
 
 const groupedButtons = Object.values(groups);
-
-data.forEach(button => {
-  console.log(button.events.click, button.events.dblclick)
-});
-
-
 </script>
 
 <style scoped>
