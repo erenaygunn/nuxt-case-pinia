@@ -1,65 +1,184 @@
 {
-    "buttons": [
-      {
-        "type": "PrimaryButton",
-        "label": "Primary Button",
-        "icon": null
-      },
-      {
-        "type": "PrimaryButton",
-        "label": "Primary Button",
-        "icon": "only-icon"
-      },
-      {
-        "type": "PrimaryButton",
-        "label": "Primary Button",
-        "icon": "left"
-      },
-      {
-        "type": "PrimaryButton",
-        "label": "Primary Button",
-        "icon": "right"
-      },
-      {
-        "type": "SecondaryButton",
-        "label": "Secondary Button",
-        "icon": null
-      },
-      {
-        "type": "SecondaryButton",
-        "label": "Secondary Button",
-        "icon": "only-icon"
-      },
-      {
-        "type": "SecondaryButton",
-        "label": "Secondary Button",
-        "icon": "left"
-      },
-      {
-        "type": "SecondaryButton",
-        "label": "Secondary Button",
-        "icon": "right"
-      },
-      {
-        "type": "OutlinedButton",
-        "label": "Outlined Button",
-        "icon": null
-      },
-      {
-        "type": "OutlinedButton",
-        "label": "Outlined Button",
-        "icon": "only-icon"
-      },
-      {
-        "type": "OutlinedButton",
-        "label": "Outlined Button",
-        "icon": "left"
-      },
-      {
-        "type": "OutlinedButton",
-        "label": "Outlined Button",
-        "icon": "right"
+  "buttons": [
+    {
+      "type": "PrimaryButton",
+      "label": "Primary Button",
+      "icon": null,
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "loading"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Primary Button double-clicked!"
+        }
       }
-    ]
-  }
-  
+    },
+    {
+      "type": "PrimaryButton",
+      "label": "Primary Button",
+      "icon": "only-icon",
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "disabled"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Primary Button double-clicked!"
+        }
+      }
+    },
+    {
+      "type": "PrimaryButton",
+      "label": "Primary Button",
+      "icon": "left",
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "loading"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Primary Button with left icon double-clicked!"
+        }
+      }
+    },
+    {
+      "type": "PrimaryButton",
+      "label": "Primary Button",
+      "icon": "right",
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "disabled"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Primary Button with right icon double-clicked!"
+        }
+      }
+    },
+    {
+      "type": "SecondaryButton",
+      "label": "Secondary Button",
+      "icon": null,
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "loading"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Secondary Button double-clicked!"
+        }
+      }
+    },
+    {
+      "type": "SecondaryButton",
+      "label": "Secondary Button",
+      "icon": "only-icon",
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "disabled"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Secondary Button double-clicked!"
+        }
+      }
+    },
+    {
+      "type": "SecondaryButton",
+      "label": "Secondary Button",
+      "icon": "left",
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "loading"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Secondary Button with left icon double-clicked!"
+        }
+      }
+    },
+    {
+      "type": "SecondaryButton",
+      "label": "Secondary Button",
+      "icon": "right",
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "disabled"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Secondary Button with right icon double-clicked!"
+        }
+      }
+    },
+    {
+      "type": "OutlinedButton",
+      "label": "Outlined Button",
+      "icon": null,
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "loading"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Outlined Button double-clicked!"
+        }
+      }
+    },
+    {
+      "type": "OutlinedButton",
+      "label": "Outlined Button",
+      "icon": "only-icon",
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "disabled"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Outlined Button double-clicked!"
+        }
+      }
+    },
+    {
+      "type": "OutlinedButton",
+      "label": "Outlined Button",
+      "icon": "left",
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "loading"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Outlined Button with left icon double-clicked!"
+        }
+      }
+    },
+    {
+      "type": "OutlinedButton",
+      "label": "Outlined Button",
+      "icon": "right",
+      "events": {
+        "click": {
+          "action": "state",
+          "targetState": "disabled"
+        },
+        "dblclick": {
+          "action": "alert",
+          "message": "Outlined Button with right icon double-clicked!"
+        }
+      }
+    }
+  ]
+}

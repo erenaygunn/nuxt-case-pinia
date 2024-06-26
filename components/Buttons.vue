@@ -10,6 +10,8 @@
             :OutlinedButton"
             :key="buttonIndex"
             :icon="button.icon"
+            @click="buttonStore.handleClick(button.type, button.events.click)"
+            @dblclick="buttonStore.handleClick(button.type, button.events.dblclick)"
           >
             {{ button.label }}
           </Component>
@@ -25,6 +27,9 @@
 
 <script setup>
 import { PrimaryButton, SecondaryButton, OutlinedButton } from '#components';
+import { useButtonStore } from '@/store/buttonStore';
+
+const buttonStore = useButtonStore();
 
 const data = await $fetch('http://localhost:8000/buttons');
 
@@ -38,6 +43,11 @@ data.forEach((button) => {
 });
 
 const groupedButtons = Object.values(groups);
+
+data.forEach(button => {
+  console.log(button.events.click, button.events.dblclick)
+});
+
 
 </script>
 

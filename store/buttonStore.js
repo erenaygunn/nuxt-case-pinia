@@ -9,24 +9,48 @@ export const useButtonStore = defineStore('buttonStore', {
     }
   }),
   actions: {
+    
     setDisabled(buttonType, value) {
       if (this.buttons[buttonType]) {
         this.buttons[buttonType].disabled = value;
       }
     },
+
     setLoading(buttonType, value) {
       if (this.buttons[buttonType]) {
         this.buttons[buttonType].loading = value;
       }
     },
-    async handleClick(buttonType) {
-      if (!this.buttons[buttonType]?.loading && !this.buttons[buttonType]?.disabled) {
-        this.setLoading(buttonType, true);
 
-        await new Promise(resolve => setTimeout(resolve, 2000));
+    async handleClick(buttonType, event) {
+      console.log(event)
+      buttonType = buttonType.slice(0, -6)
+      console.log(buttonType)
+      
 
-        this.setLoading(buttonType, false);
-        this.setDisabled(buttonType, true);
+      if (event?.action) {
+        const action = event.action;
+        console.log(action)
+
+        if (action === 'state') {
+          const targetState = event.targetState;
+          console.log(targetState)
+          
+          if (targetState === 'loading') {
+            this.setLoading(buttonType, true);
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            this.setLoading(buttonType, false);
+          } 
+
+          else if (targetState === 'disabled') {
+            this.setDisabled(buttonType, true);
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            this.setDisabled(buttonType, false);
+          }
+        } 
+        else if (action === 'alert') {
+          alert(event.message);
+        }
       }
     }
   }

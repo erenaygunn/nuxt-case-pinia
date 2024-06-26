@@ -1,5 +1,5 @@
 <template>
-    <button :class="[icon, 'secondary', {loading: buttonStore.buttons['Secondary']?.loading, disabled: buttonStore.buttons['Secondary']?.disabled}]" @click="handleClick">
+    <button :class="[icon, 'secondary', {loading: buttonStore.buttons['Secondary']?.loading, disabled: buttonStore.buttons['Secondary']?.disabled}]">
         <img v-if="icon && !buttonStore.buttons['Secondary']?.loading" src="@/assets/right.png" alt="icon" :class="icon">
         <div v-if="buttonStore.buttons['Secondary']?.loading" class="loader">
             <div class="spinner">
@@ -29,13 +29,8 @@ export default {
     setup() {
         const buttonStore = useButtonStore();
 
-        const handleClick = () => {
-            buttonStore.handleClick('Secondary');
-        };
-
         return {
             buttonStore,
-            handleClick
         };
     },
 }
